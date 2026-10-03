@@ -1,4 +1,4 @@
-import { describeAdvanced } from "./advanced-controls.js?v=aa27a3dbe74037ed";
+import { describeAdvanced } from "./advanced-controls.js?v=0b7e97e58e23cd2c";
 // Metadata is trusted only within the configured authenticated MQTT namespace.
 // Matching session IDs establish consistency, not cryptographic publisher identity.
 export function validateMetadata(value) {

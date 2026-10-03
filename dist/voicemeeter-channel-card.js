@@ -1,14 +1,14 @@
 // Voicemeeter MQTT Bridge. See repository LICENSE and upstream attribution.
-import { MeterModel, meterFraction } from "./meter-model.js?v=aa27a3dbe74037ed";
-import { cardStyles } from "./card-styles.js?v=aa27a3dbe74037ed";
-import { CardFeed } from "./card-feed.js?v=aa27a3dbe74037ed";
-import { slowSensorView } from "./slow-sensor.js?v=aa27a3dbe74037ed";
-import { VisibleRenderer } from "./visible-renderer.js?v=aa27a3dbe74037ed";
-import { ControlPanel } from "./control-panel.js?v=aa27a3dbe74037ed";
-import { normalizeControls } from "./control-model.js?v=aa27a3dbe74037ed";
-import { MeasurementPanel } from "./measurement-panel.js?v=aa27a3dbe74037ed";
-import { PeakMotion } from "./peak-motion.js?v=aa27a3dbe74037ed";
-import "./channel-card-editor.js?v=aa27a3dbe74037ed";
+import { MeterModel, meterFraction } from "./meter-model.js?v=0b7e97e58e23cd2c";
+import { cardStyles } from "./card-styles.js?v=0b7e97e58e23cd2c";
+import { CardFeed } from "./card-feed.js?v=0b7e97e58e23cd2c";
+import { slowSensorView } from "./slow-sensor.js?v=0b7e97e58e23cd2c";
+import { VisibleRenderer } from "./visible-renderer.js?v=0b7e97e58e23cd2c";
+import { ControlPanel } from "./control-panel.js?v=0b7e97e58e23cd2c";
+import { normalizeControls } from "./control-model.js?v=0b7e97e58e23cd2c";
+import { MeasurementPanel } from "./measurement-panel.js?v=0b7e97e58e23cd2c";
+import { PeakMotion } from "./peak-motion.js?v=0b7e97e58e23cd2c";
+import "./channel-card-editor.js?v=0b7e97e58e23cd2c";
 
 const statusLabels = {
   unconfigured: "Choose a source",
@@ -80,6 +80,11 @@ export class VoicemeeterChannelCard extends HTMLElement {
     return document.createElement("voicemeeter-channel-card-editor");
   }
   getCardSize() {
+    if (
+      this.model.config.presentation === "meter" &&
+      this.model.config.orientation === "horizontal"
+    )
+      return 1;
     return this.model.config.orientation === "vertical"
       ? 7
       : this.model.config.variant === "compact"
@@ -99,6 +104,9 @@ export class VoicemeeterChannelCard extends HTMLElement {
     this.streamStatus = null;
     this.clearTimer();
     this.model = model;
+    this.controls.setActive(
+      this.visible && model.config.presentation !== "meter",
+    );
     this.slowReading = null;
     this.motion = new PeakMotion(
       model.config.floor,
@@ -211,7 +219,9 @@ export class VoicemeeterChannelCard extends HTMLElement {
     if (visible === this.visible) return;
     this.visible = visible;
     this.renderer.setActive(visible);
-    this.controls.setActive(visible);
+    this.controls.setActive(
+      visible && this.model.config.presentation !== "meter",
+    );
     this.measurement.setActive(visible);
     if (!visible) {
       this.feed.stop();
@@ -271,6 +281,14 @@ export class VoicemeeterChannelCard extends HTMLElement {
     );
     this.nodes.article.dataset.orientation = orientation;
     this.nodes.article.dataset.variant = variant;
+    this.nodes.article.dataset.presentation = config.presentation;
+    this.nodes.article.dataset.nameStyle = config.nameStyle;
+    this.shadowRoot.querySelector(".identity").hidden =
+      config.nameStyle === "hidden";
+    this.shadowRoot.querySelector("header").hidden =
+      config.nameStyle === "hidden" && !config.showPeakValue;
+    this.shadowRoot.querySelector(".controls-root").hidden =
+      config.presentation === "meter";
     this.nodes.h2.textContent =
       ((!view.label || view.label === view.id) && this.descriptor?.label) ||
       view.label ||

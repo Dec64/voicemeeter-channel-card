@@ -1,4 +1,4 @@
-import { nativeSessionTelemetry } from "./native-session.js?v=aa27a3dbe74037ed";
+import { nativeSessionTelemetry } from "./native-session.js?v=0b7e97e58e23cd2c";
 
 export class CardFeed {
   constructor(deliver, hub = nativeSessionTelemetry) { this.deliver = deliver; this.hub = hub; this.generation = 0; }

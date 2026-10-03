@@ -1,5 +1,5 @@
-import { normalizeConfig } from "./meter-model.js?v=aa27a3dbe74037ed";
-import { normalizeControls } from "./control-model.js?v=aa27a3dbe74037ed";
+import { normalizeConfig } from "./meter-model.js?v=0b7e97e58e23cd2c";
+import { normalizeControls } from "./control-model.js?v=0b7e97e58e23cd2c";
 
 export function applyEditorValues(config, values) {
   const sourceChanged =
@@ -23,6 +23,9 @@ export function applyEditorValues(config, values) {
     appearance: {
       ...config.appearance,
       variant: values.variant ?? config.appearance?.variant ?? "standard",
+      presentation:
+        values.presentation ?? config.appearance?.presentation ?? "channel",
+      name_style: values.nameStyle ?? config.appearance?.name_style ?? "full",
     },
   };
   if (values.id.startsWith("bus:")) delete next.meter.mute_display_mode;

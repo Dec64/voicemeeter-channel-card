@@ -1,4 +1,4 @@
-import { SharedTelemetry } from "./shared-telemetry.js?v=aa27a3dbe74037ed";
+import { SharedTelemetry } from "./shared-telemetry.js?v=0b7e97e58e23cd2c";
 
 export function validateNativeTopic(topic) {
   // HA renders MQTT trigger topics as templates, so template delimiters are forbidden.
