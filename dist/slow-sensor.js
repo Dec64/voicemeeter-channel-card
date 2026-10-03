@@ -1,5 +1,5 @@
 // A conservative last-state-update budget, not evidence of the device's sample age.
-import { meterFraction } from './meter-model.js';
+import { meterFraction } from './meter-model.js?v=15a47b3b0fbfb63a';
 export const SENSOR_FRESHNESS_MS = 15000;
 export function slowSensorView(config, hass, now = Date.now()) {
   const entity = config.meters[config.tap];

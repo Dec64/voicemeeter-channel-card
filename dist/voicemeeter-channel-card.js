@@ -1,14 +1,14 @@
 // Voicemeeter MQTT Bridge. See repository LICENSE and upstream attribution.
-import { MeterModel, meterFraction } from "./meter-model.js";
-import { cardStyles } from "./card-styles.js";
-import { CardFeed } from "./card-feed.js";
-import { slowSensorView } from "./slow-sensor.js";
-import { VisibleRenderer } from "./visible-renderer.js";
-import { ControlPanel } from "./control-panel.js";
-import { normalizeControls } from "./control-model.js";
-import { MeasurementPanel } from "./measurement-panel.js";
-import { PeakMotion } from "./peak-motion.js";
-import "./channel-card-editor.js";
+import { MeterModel, meterFraction } from "./meter-model.js?v=15a47b3b0fbfb63a";
+import { cardStyles } from "./card-styles.js?v=15a47b3b0fbfb63a";
+import { CardFeed } from "./card-feed.js?v=15a47b3b0fbfb63a";
+import { slowSensorView } from "./slow-sensor.js?v=15a47b3b0fbfb63a";
+import { VisibleRenderer } from "./visible-renderer.js?v=15a47b3b0fbfb63a";
+import { ControlPanel } from "./control-panel.js?v=15a47b3b0fbfb63a";
+import { normalizeControls } from "./control-model.js?v=15a47b3b0fbfb63a";
+import { MeasurementPanel } from "./measurement-panel.js?v=15a47b3b0fbfb63a";
+import { PeakMotion } from "./peak-motion.js?v=15a47b3b0fbfb63a";
+import "./channel-card-editor.js?v=15a47b3b0fbfb63a";
 
 const statusLabels = {
   unconfigured: "Choose a source",

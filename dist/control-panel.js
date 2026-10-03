@@ -3,9 +3,9 @@ import {
   readControl,
   controlRequest,
   ROUTES,
-} from "./control-model.js";
-import { ADVANCED_GROUPS } from "./advanced-controls.js";
-import { ControlCommands } from "./control-commands.js";
+} from "./control-model.js?v=15a47b3b0fbfb63a";
+import { ADVANCED_GROUPS } from "./advanced-controls.js?v=15a47b3b0fbfb63a";
+import { ControlCommands } from "./control-commands.js?v=15a47b3b0fbfb63a";
 
 const commandLabels = {
   pending: "Applying; waiting for the mixer state.",

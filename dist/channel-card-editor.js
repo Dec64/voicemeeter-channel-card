@@ -1,11 +1,11 @@
-import { applyEditorValues } from "./editor-config.js";
-import { normalizeConfig } from "./meter-model.js";
-import { normalizeControls, ROUTES } from "./control-model.js";
+import { applyEditorValues } from "./editor-config.js?v=15a47b3b0fbfb63a";
+import { normalizeConfig } from "./meter-model.js?v=15a47b3b0fbfb63a";
+import { normalizeControls, ROUTES } from "./control-model.js?v=15a47b3b0fbfb63a";
 import {
   ADVANCED_GROUPS,
   resolveRegistryEntities,
-} from "./advanced-controls.js";
-import { CardFeed } from "./card-feed.js";
+} from "./advanced-controls.js?v=15a47b3b0fbfb63a";
+import { CardFeed } from "./card-feed.js?v=15a47b3b0fbfb63a";
 
 export class VoicemeeterChannelCardEditor extends HTMLElement {
   constructor() {

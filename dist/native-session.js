@@ -1,6 +1,6 @@
-import { SharedTelemetry } from "./shared-telemetry.js";
-import { decodeNativeEvent, validateNativeTopic } from "./native-ha-transport.js";
-import { SessionGate } from "./session-gate.js";
+import { SharedTelemetry } from "./shared-telemetry.js?v=15a47b3b0fbfb63a";
+import { decodeNativeEvent, validateNativeTopic } from "./native-ha-transport.js?v=15a47b3b0fbfb63a";
+import { SessionGate } from "./session-gate.js?v=15a47b3b0fbfb63a";
 
 function metadataPayload(event, topic) {
   const trigger = event?.variables?.trigger;

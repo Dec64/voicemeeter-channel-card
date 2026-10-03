@@ -1,4 +1,4 @@
-import { readControl, controlRequest } from "./control-model.js";
+import { readControl, controlRequest } from "./control-model.js?v=15a47b3b0fbfb63a";
 
 export class ControlCommands {
   constructor(changed, schedule = (callback, delay) => setTimeout(callback, delay), cancel = id => clearTimeout(id)) {

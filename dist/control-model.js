@@ -1,4 +1,4 @@
-import { describeAdvanced, ADVANCED_GROUPS } from "./advanced-controls.js";
+import { describeAdvanced, ADVANCED_GROUPS } from "./advanced-controls.js?v=15a47b3b0fbfb63a";
 export const ROUTES = Object.freeze(["A1", "A2", "A3", "A4", "A5", "B1", "B2", "B3"]);
 
 // Explicit entity overrides assert the source association; labels never resolve targets.
