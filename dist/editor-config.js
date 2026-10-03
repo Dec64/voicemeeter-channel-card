@@ -1,5 +1,5 @@
-import { normalizeConfig } from "./meter-model.js?v=15a47b3b0fbfb63a";
-import { normalizeControls } from "./control-model.js?v=15a47b3b0fbfb63a";
+import { normalizeConfig } from "./meter-model.js?v=aa27a3dbe74037ed";
+import { normalizeControls } from "./control-model.js?v=aa27a3dbe74037ed";
 
 export function applyEditorValues(config, values) {
   const sourceChanged =

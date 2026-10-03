@@ -1,4 +1,4 @@
-import { TelemetryMeasurement } from "./telemetry-measurement.js?v=15a47b3b0fbfb63a";
+import { TelemetryMeasurement } from "./telemetry-measurement.js?v=aa27a3dbe74037ed";
 
 // Developer diagnostics only. No timers/histograms until the user starts a run.
 export class MeasurementPanel {
